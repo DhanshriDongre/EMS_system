@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Angular assignemnt</title>
+</head>
+
+<body>
+  
+    <button onclick="addProduct();">Get Products</button>
+	<br/><br/>
+    <table border = "1" cellpadding="2" >
+        <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Unit Price</th>
+          <th>Units in Stock</th>
+        </tr>
+    </thead>
+    <tbody id="myTable"> </tbody>
+    </table>
+
+      <script type="text/javascript">
+      function addProduct(){
+        var products = [
+            { pname : "Printer", price : 3000, qty : 20},
+            {pname : "RAM", price : 1000, qty : 23},
+            {pname : "HDD", price : 2000, qty : 20},
+            {pname : "USB", price : 4005, qty : 35}
+        ];
+        var arr = '';
+        for(i = 0;i < products.length; i++){
+           arr+= '<tr>';
+            arr+= '<td>' + products[i].pname + '</td>';
+            arr+= '<td>' + products[i].price + '</td>';
+            arr+= '<td>' + products[i].qty + '</td>';
+            arr+= '</tr>';
+        }
+        arr+='';
+        document.getElementById('myTable').innerHTML = arr;
+    }
+        </script>
+</body>
+</html>
